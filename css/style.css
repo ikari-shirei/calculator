@@ -9,9 +9,9 @@
   --color8: #61A5C2;
   --color9: #89C2D9;
   --color10: #A9D6E5;
-  --red: #942043;
-  --blue: #20d2d8;
-  --green: #29c584;
+  --red: #b90d40;
+  --blue: #20d8b0;
+  --green: #42c448;
  
 }
 
@@ -20,7 +20,7 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(90deg, rgba(41,197,132,1) 0%, rgba(32,210,216,1) 100%);
+  background: linear-gradient(90deg, #29c531 0%,  #20d8b0 100%);
   box-sizing: border-box;
   font-size: 1.3rem;
 }
@@ -101,7 +101,7 @@ main {
   margin: 0;
   padding: 0;
   box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color4);
+  background-color: var(--color2);
   color: var(--color10);
   cursor: pointer;
   overflow: hidden;
