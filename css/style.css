@@ -1,0 +1,159 @@
+:root {
+ /*  --color1: #3D405B;
+  --color2: #F4F1DE;
+  --color3: #F2CC8F;
+  --color4: #E07A5F;
+  --color5: #81B29A; */
+  /* --color1: #184E77;
+  --color2: #D9ED92;
+  --color3: #168AAD;
+  --color4: #1A759F;
+  --color5: #76C893;
+  --color6:  #B5E48C;
+  --color7: #99D98C;
+ */
+ --color1: #012A4A;
+  --color2: #013A63;
+  --color3: #01497C;
+  --color4: #014F86;
+  --color5: #2A6F97;
+  --color6:  #2C7DA0;
+  --color7: #468FAF;
+  --color8: #61A5C2;
+  --color9: #89C2D9;
+  --color10: #A9D6E5;
+  --red: #942043;
+  --blue: #20d2d8;
+  --green: #29c584;
+ 
+}
+
+body {
+  color: var(--color1);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(41,197,132,1) 0%, rgba(32,210,216,1) 100%);
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.main-frame {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color1);
+  margin: 2rem 0 0 0; 
+  width: 300px;
+  height: auto;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  background-color: var(--green);
+  width: auto;
+  min-height: 125px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.display p {
+  margin: 0;
+  padding: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+}
+
+.display h2 {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.5rem 0 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
+  gap: 16px 16px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+    margin: 1rem 0 0 0;
+}
+
+.buttons div {  
+  font-size: 1.3rem;
+  height: 63px;
+  border-radius: 15px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--color4);
+  color: var(--color10);
+  cursor: pointer;
+  overflow: hidden;
+  transition: 400ms;
+}
+
+.button * {
+  margin: 0;
+  padding: 0;
+}
+
+.button:active {
+  transform: translateY(4px);
+  transition: 5ms;
+}
+
+.del:hover {
+  background-color: var(--red);
+  color: var(--color10);
+}
+
+.operator:hover{
+  background-color: var(--blue);
+  color: var(--color1);
+}
+
+.num:hover{
+  background-color: var(--color10);
+  color: var(--color1);
+}
+
+#equal {
+  grid-column-start: -3;
+  grid-column-end: -1;
+}
+
+#equal:hover {
+  color: var(--color1);
+  background-color: var(--green);
+
+}
+
