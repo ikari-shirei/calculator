@@ -1,48 +1,69 @@
-function add(num1, num2) {
-  return num1 + num2;
-}
-
-function subtract(num1, num2) {
-  return num1 - num2;
-}
-
-function multiply(num1, num2) {
-  return num1 * num2;
-}
-
-function divide(num1, num2) {
-  return num1 / num2;
-}
-
-let store = [];
-let variable1;
-let variable2;
-
-function show() {
-  for (let i = 0; i < num.length; i++) {
-    num[i].addEventListener('click', (e) => {
-      store.push(e.target.textContent);
+function screen() {
+  allNum.forEach((x) => {
+    x.addEventListener('click', (y) => {
+      store.push(x.textContent);
       displayResult.textContent = store.join('');
     });
-  }
-
-  clear.addEventListener('click', () => {
-    store = [];
-    displayResult.textContent = store;
   });
 }
 
-show();
+screen();
+
+function allClear() {
+  clear.addEventListener('click', (x) => {
+    store = [];
+    displayResult.textContent = '';
+    number1 = '';
+    number2 = '';
+    currentOperator = '';
+    currentNumber = '';
+  });
+}
+
+allClear();
+
+function oneClear() {
+  backspace.addEventListener('click', (x) => {
+    store.pop();
+    displayResult.textContent = store.join('');
+  });
+}
+
+oneClear();
+
+function operators() {
+  allOperator.forEach((x) => {
+    x.addEventListener('click', (y) => {
+      number1 = store.join('');
+      number1 = Number(number1);
+      currentOperator = x.textContent;
+      store = [];
+      displayResult.textContent = store.join('');
+    });
+  });
+}
+
+operators();
 
 function operate() {
-  oper.forEach((x) => {
-    x.addEventListener('click', () => {
-      variable1 = store.join('');
-      variable1 = parseInt(variable1);
-      store = [];
-      variable2 = variable1;
-      console.log({ variable1, variable2 });
-    });
+  equal.addEventListener('click', (x) => {
+    number2 = store.join('');
+    number2 = Number(number2);
+    if (currentOperator === '+') {
+      currentNumber = number1 + number2;
+    } else if (currentOperator === '-') {
+      currentNumber = number1 - number2;
+    } else if (currentOperator === '*') {
+      currentNumber = number1 * number2;
+    } else if (currentOperator === '/') {
+      currentNumber = number1 / number2;
+    } else if (currentOperator === '%') {
+      currentNumber = number1 % number2;
+    }
+    store = [];
+    displayResult.textContent = store.join('');
+    displayResult.textContent = currentNumber;
+    number1 = currentNumber;
   });
 }
 
